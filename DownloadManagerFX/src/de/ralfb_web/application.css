@@ -1,0 +1,196 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+     -fx-background-image: url("/de/ralfb_web/images/BackgroundSteel1400.png");
+}
+
+.OraLabInfo125 {
+	-fx-background-image: url("/de/ralfb_web/images/OraLabInfo125.png");
+}
+
+.progress-indicator {
+	-fx-progress-color: #444444;
+	-fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.7) , 6.0, 0.0 , 0.0 , 2.0 );
+}
+
+.image-error-status {
+	-fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.7) , 6.0, 0.0 , 0.0 , 2.0 );
+}
+
+.text-H2 {
+   -fx-font-size: 18.0px;
+   -fx-font-family: "B612 Bold";
+   -fx-fill: #CE5B27;
+   -fx-effect: dropshadow( gaussian , rgba(255.0,255.0,255.0,0.5) , 0.0,0.0,0.0,1.0 ); 
+}
+
+.text-H3 {
+   -fx-font-size: 16.0px;
+   -fx-font-family: "B612 Mono Bold";
+   -fx-fill: #CE5B27;
+   -fx-effect: dropshadow( gaussian , rgba(255.0,255.0,255.0,0.5) , 0.0,0.0,0.0,1.0 ); 
+}
+
+.text-label {
+   -fx-font-size: 15.0px;
+   -fx-font-family: "B612 Regular";
+   -fx-fill: black;
+}
+
+.textfield-input {
+   -fx-font-size: 14.0px;
+   -fx-font-family: "B612 Regular";
+   -fx-fill: black;
+   -fx-background-color: #fffff0;
+   -fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.7) , 6.0, 0.0 , 0.0 , 2.0 );
+}
+
+.textarea-output .content{
+   -fx-text-inner-color: black;
+   -fx-background-color: text-area-background;
+   -fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.7) , 6.0, 0.0 , 0.0 , 2.0 );
+}
+
+.text-area {
+   -fx-font-size: 12.5px;
+   -fx-font-family: "B612 Regular";
+    text-area-background: #fffff0;
+}
+
+.button-round-exit30 {
+	-fx-background-radius: 5em;
+	-fx-min-width: 30px;
+	-fx-min-height: 30px;
+	-fx-max-width: 30px;
+	-fx-max-height: 30px;
+	-fx-background-image: url("/de/ralfb_web/images/PowerOffT30G.png");
+	-fx-background-color: transparent;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button-round-execute30 {
+	-fx-background-radius: 5em;
+	-fx-min-width: 30px;
+	-fx-min-height: 30px;
+	-fx-max-width: 30px;
+	-fx-max-height: 30px;
+	-fx-background-image: url("/de/ralfb_web/images/ExecuteButton30.png");
+	-fx-background-color: transparent;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button-Start {
+	-fx-background-image: url("/de/ralfb_web/images/ExecuteButton25.png");
+	-fx-background-color: transparent;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button-Stop {
+	-fx-background-image: url("/de/ralfb_web/images/StopButton35.png");
+	-fx-background-color: transparent;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.tree-view {
+   -fx-font-size: 12.5px;
+   -fx-font-family: "B612 Regular";
+   -fx-text-fill: black; 
+   -fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.7) , 6.0, 0.0 , 0.0 , 2.0 );
+}
+
+.tree-view .tree-cell {
+	-fx-background-color: #fffff0;
+	-fx-text-fill: black;
+}
+
+.tree-view .tree-cell:selected {
+	 -fx-background-color: #d7d7d7;
+	 -fx-text-fill: #000000;
+	 -fx-border-color: #d7d7d7;
+}
+
+.navigation-button{
+    -fx-padding: 0;
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+}
+
+.about-appname-text{
+    -fx-text-fill: -fx-text-base-color;
+    -fx-font: bold 40px "Monospace" ;
+    -fx-padding: 10;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 3, 0.0 , 1 , 1 );
+}
+
+.navigation-button:disabled{
+    -icons-color: -fx-text-color-alt;
+}
+
+.dark-label{
+    -fx-text-fill: -fx-text-color-alt;
+}
+
+.close-button {
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#modal-dimmer{
+    -fx-background-color: rgba(46,52,64,0.7);
+}
+
+.modal-dimmer-dialog{
+    -fx-background-color: black, white, -fx-background;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 15, 14, 13;
+    -fx-padding: 15;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 20, 0.0 , 0 , 0 );
+}
+
+.label-private-key {
+   -fx-font-size: 14.0px;
+   -fx-font-family: "B612 Regular";
+   -fx-fill: black;
+}
+
+.label-header-info {
+   -fx-font-size: 14.0px;
+   -fx-font-family: "B612 Regular";
+   -fx-alignment:center;
+   -fx-fill: #444444;
+   -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.8) , 20, 0.0 , 0 , 0 );
+   -fx-background-color: #dedde2;
+   -fx-background-radius: 15, 14, 13;
+   
+}
+
+.label-server-info {
+   -fx-font-size: 14.0px;
+   -fx-font-family: "B612 Regular";
+   -fx-fill: black;
+}
+
+.label-database-info {
+   -fx-font-size: 14.0px;
+   -fx-font-family: "B612 Regular";
+   -fx-fill: black;
+}
+
+.show-server-root-pwd-button {
+    -fx-padding: 0;
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow( gaussian , rgba(255.0,255.0,255.0,0.5) , 0.0,0.0,0.0,1.0 ); 
+}
+
+.glyph-icon{
+    -fx-text-fill: #444444;
+    -fx-fill: #444444;
+}
+
+.sqlMessages {
+   -fx-text-inner-color: red;
+   -fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.7) , 6.0, 0.0 , 0.0 , 2.0 );
+}
+
+
