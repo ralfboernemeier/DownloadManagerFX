@@ -6,11 +6,12 @@ import javafx.util.Callback;
 
 /**
  * <h2>Loader for the JavaFX Scene Parent</h2>
+ * 
  * @author Ralf Boernemeier
  *
  */
 public class ViewLoader {
-	
+
 	/**
 	 * Method that returns the JavaFX Parent to be loaded
 	 * 

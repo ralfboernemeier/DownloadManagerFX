@@ -41,5 +41,21 @@ public class Utils {
 	public static void onOpenUrl(String url) throws Exception {
 			Desktop.getDesktop().browse(new URI(url));
 	}
+	
+	/**
+	 * Method to check if 1st word of a given string equals the string "http://" or "https://" and
+	 * return true or false.
+	 * 
+	 * @param url Input URL String to check if 1st word of string equals "http://" or "https://"
+	 * @return boolean true | false
+	 */
+	public static boolean checkforValidUrl(String url) {
+		// url.trim() will remove leading whitespace(s) of the string
+		String[] parts = url.trim().split(":");
+		if (parts[0].equalsIgnoreCase("http") || parts[0].equalsIgnoreCase("https")) {
+			return true;
+		} else
+			return false;
+	}
 
 }

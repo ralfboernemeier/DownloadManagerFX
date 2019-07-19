@@ -2,7 +2,9 @@ package de.ralfb_web;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 import java.util.Locale;
+import java.util.Properties;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -10,21 +12,22 @@ import de.ralfb_web.model.Model;
 import de.ralfb_web.utils.ControllerFactory;
 import de.ralfb_web.utils.Utils;
 import de.ralfb_web.utils.ViewLoader;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 
 /**
  * Main Class DownloadManager Application
  * 
  * @author Ralf Boernemeier
- * @version 1.0
+ * @version 190719
  * @since 2019-07-05
  *
  */
-
 
 public class Main extends Application {
 
@@ -33,6 +36,17 @@ public class Main extends Application {
 	 */
 	public Main() {
 		super();
+
+		// Load default.properties
+		try {
+			InputStream in = Main.class.getResourceAsStream("default.properties");
+			this.defaultProps = new Properties();
+			defaultProps.load(in);
+			in.close();
+		} catch (Exception ex) {
+			String msg = String.valueOf(ex);
+			LOGGER.severe(msg);
+		}
 	}
 
 	/**
@@ -44,7 +58,7 @@ public class Main extends Application {
 	private final String MACOS = "Mac OS";
 	private final String nameOS = "os.name";
 	private String osType = null;
-	private String logFileName = "DownloadManagerFX.0.log";
+	private Properties defaultProps;
 
 	/**
 	 * <h3>Logger configuration.</h3> The properties file cannot be directly loaded
@@ -80,19 +94,21 @@ public class Main extends Application {
 		} else if (System.getProperty(nameOS).contains(MACOS)) {
 			osType = "Mac OS";
 		}
-		
+
 		// Set the osType in the model
 		model.setOsTypeString(osType);
 
 		if (System.getProperty("java.io.tmpdir") == null) {
-			model.setLogFileLocationString("Environment variable TMPDIR not set! Logfile DownloadManagerFX.0.log saved to "
-					+ osType + " specific tmpdir!");
+			model.setLogFileLocationString("Environment variable TMPDIR not set! Logfile "
+					+ defaultProps.getProperty("app.logfilename") + " saved to " + osType + " specific tmpdir!");
 
 		} else {
 			if (osType == "Windows" || osType == "Mac OS") {
-				model.setLogFileLocationString(System.getProperty("java.io.tmpdir") + logFileName);
+				model.setLogFileLocationString(
+						System.getProperty("java.io.tmpdir") + defaultProps.getProperty("app.logfilename"));
 			} else if (osType == "Linux") {
-				model.setLogFileLocationString(System.getProperty("java.io.tmpdir") + "/" + logFileName);
+				model.setLogFileLocationString(
+						System.getProperty("java.io.tmpdir") + "/" + defaultProps.getProperty("app.logfilename"));
 			} else {
 				System.out.println("Unsupported Operating System detected! Exit Application now!");
 				LOGGER.severe("Unsupported Operating System detected! Exit Application now!");
@@ -118,6 +134,8 @@ public class Main extends Application {
 			primaryStage.setOnCloseRequest(event -> {
 				LOGGER.info("Exit DownloadManagerFX Application.");
 			});
+			primaryStage.getIcons().add(new Image("/de/ralfb_web/images/DownloadMgr125x99.png"));
+			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -192,4 +210,3 @@ public class Main extends Application {
 		launch(args);
 	}
 }
-
